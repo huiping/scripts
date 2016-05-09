@@ -1,0 +1,11 @@
+if [ -f "db/development.b.sqlite3" ]; then
+  echo "Recovering db/development.b.sqlite3 to db/development.sqlite"
+  tstr=`date +%Y%m%d%H%M%S` 
+  if [ -f "db/development.sqlite3" ]; then
+    mv db/development.sqlite3 db/development.b$tstr.sqlite3
+  fi  
+mv db/development.b.sqlite3 db/development.sqlite3
+else
+  echo "Backup db/development.sqlite3 to db/development.b.sqlite3"
+  mv db/development.sqlite3 db/development.b.sqlite3
+fi

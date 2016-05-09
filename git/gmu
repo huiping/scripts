@@ -1,0 +1,9 @@
+current_branch=`git rev-parse --abbrev-ref HEAD`
+if [ -z $1 ]; then
+	tb="develop"	
+else
+	tb=$1
+fi
+git checkout $tb;
+git pull origin $tb;
+git branch -d $current_branch;

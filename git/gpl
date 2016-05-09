@@ -1,0 +1,7 @@
+if [ -z $1 ]; then
+	remote_branch=`git rev-parse --abbrev-ref HEAD`
+else
+	remote_branch=$1
+fi
+echo "Pulling from origin $remote_branch ..."
+git pull origin $remote_branch
