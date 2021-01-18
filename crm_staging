@@ -1,0 +1,3 @@
+gco develop; ggl; gco staging; ggl; gm develop; yarn staging;
+scp dist/index.html justs:/data/deploy/crm/staging/current/public/
+ggp

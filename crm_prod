@@ -1,0 +1,4 @@
+gco develop; ggl; gco master; ggl; gm develop; yarn prod;
+scp dist/index.html justs:/data/deploy/crm/production/current/public/
+ggp
+git tag

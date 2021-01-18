@@ -1,0 +1,3 @@
+cd /Users/jizhi/work/just/just-build/
+ansible-playbook -i playbooks/just-ruby/host -e version=0.$1 playbooks/just-ruby/global_staging.yml -v
+#echo $1 

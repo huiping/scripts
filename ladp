@@ -1,0 +1,23 @@
+echo "source 'https://gems.ruby-china.com'
+gem 'capistrano'
+gem 'capistrano-laravel'" > ./Gemfile
+
+bundle
+cap install
+
+sed '36i\
+require "capistrano/laravel"\
+' Capfile > Capfile_new
+mv Capfile_new Capfile
+
+git_repo=`git config --get remote.origin.url`
+echo "s/git@example.com:me\/my_repo.git/$git_repo/"
+
+# 替换 名字，repo
+# cat config/deploy.rb | sed s/my_app_name/mujubao/ | sed "s/git@example.com:me\/my_repo.git/$git_repo/"
+
+
+# 加很多行
+
+# staging.rgb
+# Server
